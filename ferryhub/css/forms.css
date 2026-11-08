@@ -1,0 +1,39 @@
+.field{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+.field label{font:700 .95rem Manrope,sans-serif;color:#3d6479}
+.field label i{color:var(--err);font-style:normal}
+.field label small{font:400 .85rem "IBM Plex Sans";color:var(--muted)}
+.field input,.field select,.field textarea{width:100%;font:inherit;padding:.65rem .8rem;border:1.5px solid #6d8aa0;border-radius:12px;background:#fff;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--cyan);outline-offset:0;border-color:var(--green-d)}
+.err{margin:0;color:var(--err);font:500 .85rem "IBM Plex Sans"}
+.field.bad input,.field.bad select,.field.bad textarea,.field.bad .drop{border-color:var(--err);background:var(--err-bg)}
+.help{color:var(--muted)}
+.regform h1{margin-bottom:.2rem}
+.trip{background:#f3f9f6;border-left:4px solid var(--green);border-radius:12px;padding:.8rem 1rem;margin-bottom:1rem}
+.trip h2{font-size:1rem;margin-bottom:.4rem}
+#trip{display:flex;flex-wrap:wrap;gap:.4rem 1rem;align-items:center}
+.chip{display:inline-block;background:#e7f7ee;border-radius:999px;padding:.15rem .7rem;font-size:.9rem}
+.progress{position:sticky;top:0;z-index:5;background:#fff;padding:.6rem 0;border-bottom:1px solid var(--line);margin-bottom:1rem}
+.barwrap{height:10px;background:#e3ecf0;border-radius:99px;margin-top:.4rem;overflow:hidden}
+.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--cyan));transition:width .3s}
+.pcard{border:1.5px solid var(--line);border-radius:16px;margin-bottom:.8rem;background:#fff;overflow:hidden}
+.pcard.done{border-color:var(--green)}
+.pcard summary{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;cursor:pointer;background:#fffde0;list-style:none}
+.pcard summary::-webkit-details-marker{display:none}
+.pcard.done summary{background:#e7f7ee}
+.pcard summary img{height:32px;width:auto}
+.ptitle{display:flex;flex-direction:column;flex:1}
+.pcat{font-size:.85rem;color:var(--muted)}
+.badge{font:700 .8rem Manrope,sans-serif;padding:.2rem .7rem;border-radius:99px;background:#fde8e6;color:#9b1c12}
+.pcard.done .badge{background:var(--green-d);color:#fff}
+.pbody{display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:1rem}
+.wide{grid-column:1/-1}
+.ro .chip{align-self:flex-start;background:#eef3f6;padding:.55rem .9rem}
+.drop{display:flex;flex-wrap:wrap;align-items:center;gap:.7rem;border:1.5px dashed #6d8aa0;border-radius:12px;padding:.7rem}
+.fname{word-break:break-all}
+.ok{color:var(--green-d);font-weight:600}
+.ok::before{content:"✓ "}
+.note{padding:.8rem 1rem;border-radius:12px;margin:1rem 0}
+.note.bad{background:var(--err-bg);color:#9b1c12;border:1px solid var(--err)}
+.note.good{background:#e7f7ee;color:#05562b;border:1px solid var(--green)}
+.actions{display:flex;justify-content:flex-end;gap:.8rem;flex-wrap:wrap}
+@media(max-width:640px){.pbody{grid-template-columns:1fr}.actions .btn{width:100%;text-align:center}}

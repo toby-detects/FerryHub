@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registration | FerryHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/forms.css"></head>
+<body data-title="reg.title" data-root="../">
+<div class="scene">
+  <main class="panel regform">
+    <h1 data-i18n="reg.title"></h1>
+    <p class="hint" data-i18n="reg.sub"></p>
+    <section class="trip"><h2 data-i18n="reg.trip"></h2><div id="trip"></div></section>
+    <div class="progress" aria-live="polite">
+      <span><span data-i18n="reg.progress"></span>: <b><span id="done">0</span> / <span id="tot">0</span></b></span>
+      <div class="barwrap"><div id="bar" class="bar"></div></div>
+    </div>
+    <form id="pform" novalidate>
+      <div id="cards"></div>
+      <p id="result" class="note" role="alert" hidden></p>
+      <div class="actions">
+        <a class="btn btn-line" href="booking.html" data-i18n="reg.cancel"></a>
+        <button type="submit" class="btn btn-g btn-lg" data-i18n="reg.submit"></button>
+      </div>
+    </form>
+  </main>
+</div>
+<script src="../js/translations.js"></script><script src="../js/main.js"></script><script src="../js/registration.js"></script>
+</body></html>

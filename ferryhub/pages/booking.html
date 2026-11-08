@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book | FerryHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/booking.css"></head>
+<body data-title="book.title" data-root="../">
+<div class="scene">
+  <main class="panel booking">
+    <div class="panel-top">
+      <h1 data-i18n="book.title"></h1>
+      <div class="field pax" data-f="pax">
+        <button type="button" id="paxBtn" class="paxbtn" aria-expanded="false" aria-controls="paxPop">
+          <span data-i18n="book.pax"></span><b id="paxTotal">0</b><img src="../assets/icons/person.png" alt=""></button>
+        <div id="paxPop" class="pop" hidden>
+          <ul id="paxList"></ul>
+          <p class="tot"><span data-i18n="book.total"></span>: <b id="paxTotal2">0</b></p>
+        </div>
+        <p class="err" hidden></p>
+      </div>
+    </div>
+    <p class="hint" data-i18n="book.hint"></p>
+    <div class="row">
+      <div class="field" data-f="from"><label for="from"><span data-i18n="book.from"></span> <i>*</i></label>
+        <div class="sel"><img src="../assets/icons/anchor.png" alt=""><select id="from"></select></div><p class="err" hidden></p></div>
+      <button type="button" id="swap" class="swap" data-i18n-aria="book.swap" aria-label="Swap ports">⇄</button>
+      <div class="field" data-f="to"><label for="to"><span data-i18n="book.to"></span> <i>*</i></label>
+        <div class="sel"><img src="../assets/icons/anchor.png" alt=""><select id="to"></select></div><p class="err" hidden></p></div>
+      <div class="field" data-f="date"><label for="date"><span data-i18n="book.date"></span> <i>*</i></label>
+        <div class="sel"><input type="date" id="date"></div><p class="err" hidden></p></div>
+      <div class="field" data-f="time"><label for="time"><span data-i18n="book.time"></span> <i>*</i></label>
+        <div class="sel"><select id="time"></select></div><p class="err" hidden></p></div>
+    </div>
+    <div class="actions"><button type="button" id="go" class="btn btn-g btn-lg" data-i18n="book.proceed"></button></div>
+  </main>
+</div>
+<script src="../js/translations.js"></script><script src="../js/main.js"></script><script src="../js/booking.js"></script>
+</body></html>
