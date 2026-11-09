@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Manage Schedule | FerryHub Staff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/dashboard.css"><link rel="stylesheet" href="../css/manage-schedule.css"></head>
+<body data-page="schedule" data-root="../">
+<main id="page">
+  <div class="page-head"><h1>Ferry Departure Schedule</h1><p>Select a date, then select a time slot to view or update it. Sample data only.</p></div>
+  <div class="sched">
+    <section class="card panel" aria-label="Calendar">
+      <div class="cal-head"><button class="iconbtn" id="prev" aria-label="Previous month">&#8249;</button><h2 id="mt" aria-live="polite"></h2><button class="iconbtn" id="next" aria-label="Next month">&#8250;</button></div>
+      <div class="cal" id="cal"></div>
+      <div class="legend"><span><i style="background:var(--action)"></i>Seats available</span><span><i style="background:var(--red)"></i>All slots full</span><span><i style="background:var(--gray)"></i>All cancelled</span><button class="btn btn-line" id="today" type="button" style="margin-left:auto;padding:.25rem .8rem">Today</button></div>
+    </section>
+    <section class="card panel" aria-label="Time slots">
+      <div class="ph"><h2>Available Hours for:</h2><span id="sd"></span></div>
+      <div class="cols"><div><h3>Available Slots</h3><div class="slots" id="s-available"></div></div><div><h3>Booked Slots</h3><div class="slots" id="s-full"></div></div></div>
+      <h3 style="margin-top:1.2rem">Cancelled</h3><div class="slots" id="s-cancelled"></div>
+    </section>
+  </div>
+  <div class="cancelrow"><button class="btn btn-cancel" id="cb" aria-disabled="true">Cancel Booking</button></div>
+</main>
+<dialog class="dlg" id="dlg" aria-labelledby="dt"><form id="f" novalidate>
+  <div class="dlg-head"><h2 id="dt">Time slot</h2><button type="button" class="iconbtn" id="x" aria-label="Close">&#10005;</button></div>
+  <div class="dlg-body">
+    <dl class="sum"><dt>Route</dt><dd>Mabini-Tingloy</dd><dt>Date</dt><dd id="m-date"></dd><dt>Departure</dt><dd id="m-time"></dd><dt>Remaining seats</dt><dd id="m-rem"></dd></dl>
+    <div class="field"><label for="ms">Status <i>*</i></label><select id="ms" name="status"><option value="available">Available</option><option value="full">Full</option><option value="cancelled">Cancelled</option></select><p class="err" hidden></p></div>
+    <div class="field"><label for="mc">Capacity <i>*</i></label><input id="mc" name="capacity" inputmode="numeric"><p class="err" hidden></p></div>
+    <div class="field"><label for="mn">Passengers booked <i>*</i></label><input id="mn" name="count" inputmode="numeric"><p class="err" hidden></p></div>
+    <p class="hint wide">Full slots accept no more passengers. Cancelled slots are shown in gray.</p>
+  </div>
+  <div class="dlg-actions"><button type="button" class="btn btn-line" id="cancel">Cancel</button><button type="submit" class="btn btn-primary">Save slot</button></div>
+</form></dialog>
+<script src="../js/sample-data.js"></script><script src="../js/validation.js"></script><script src="../js/auth.js"></script><script src="../js/navigation.js"></script><script src="../js/manage-schedule.js"></script>
+</body></html>

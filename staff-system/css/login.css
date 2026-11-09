@@ -1,0 +1,26 @@
+.login{min-height:100vh;display:grid;grid-template-columns:1fr minmax(360px,520px);align-items:center;gap:2rem;padding:2rem clamp(1rem,5vw,5rem);
+ background:url("../assets/images/hero-login.jpg") center/cover,linear-gradient(180deg,#4aa3e8,#0b8f8c)}
+.brand-side{color:#fff;text-shadow:0 2px 14px rgba(8,30,60,.55)}
+.brand-side img{width:min(100%,560px);display:block}
+.brand-side h2{color:#fff;margin-top:1.2rem;font-size:clamp(1.2rem,2.4vw,1.9rem);letter-spacing:.04em;text-transform:uppercase}
+.lcard{background:#fff;border-radius:32px;padding:2.2rem clamp(1.2rem,3vw,2.6rem);box-shadow:0 24px 60px rgba(8,30,60,.35)}
+.lcard .grp{display:block;height:64px;margin:0 auto 1rem}
+.lcard h1{text-align:center;font-size:1.5rem}
+.lcard .sub{text-align:center;color:var(--muted);margin:.2rem 0 1.2rem}
+.seg{display:grid;grid-template-columns:1fr 1fr;width:min(100%,300px);margin:0 auto 1.2rem;border:1.5px solid var(--navy);border-radius:999px;padding:3px}
+.seg button{border:0;border-radius:999px;padding:.5rem;font:600 1rem "IBM Plex Sans",system-ui,sans-serif;color:var(--slate);background:none;cursor:pointer}
+.seg button.on{background:var(--slate);color:#fff}
+.seg button.locked{color:#6b7f95}
+.notice{margin:0 0 1rem;padding:.6rem .9rem;border-radius:10px;font-size:.9rem;background:var(--amber-bg);color:var(--amber)}
+.notice.bad{background:var(--red-bg);color:var(--red)}
+.ifield{position:relative}
+.wrap>img.lead{position:absolute;left:.9rem;top:50%;height:22px;width:auto;transform:translateY(-50%);pointer-events:none}
+.field.ifield{margin-bottom:1rem}
+.ifield input{padding:.8rem 2.8rem .8rem 3rem;border-color:var(--navy)}
+.ifield .wrap{position:relative}.field.ifield{margin-bottom:1rem}
+.eye{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);width:38px;height:38px;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.eye img{height:20px}.eye svg{display:none;width:22px;height:22px;fill:none;stroke:var(--slate);stroke-width:2}.eye.show svg{display:block}.eye.show img{display:none}
+.lcard .btn-primary{width:100%;justify-content:center;background:var(--slate);border-radius:999px;padding:.8rem;font-size:1.05rem;margin-top:.4rem}
+.lcard .btn-primary:hover{background:#486f96}
+.demo{margin:1rem 0 0;text-align:center;font-size:.8rem;color:var(--muted)}
+@media(max-width:860px){.login{grid-template-columns:1fr}.brand-side{text-align:center}.brand-side img{margin:0 auto;width:min(100%,380px)}}

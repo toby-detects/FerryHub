@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Announcement | FerryHub Staff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/dashboard.css"><link rel="stylesheet" href="../css/passenger-records.css"><link rel="stylesheet" href="../css/announcements.css"></head>
+<body data-page="announcements" data-root="../">
+<main id="page">
+  <div class="page-head"><h1>Announcement</h1></div>
+  <div class="atools">
+    <button type="button" id="add"><img src="../assets/icons/add.png" alt="">Add new announcement</button>
+    <button type="button" id="del" disabled><img src="../assets/icons/trash.png" alt="">Delete<span id="sel"></span></button>
+    <button type="button" id="upd"><img src="../assets/icons/check.png" alt="">Display / Update Announcement</button>
+  </div>
+  <section class="card">
+    <div class="filters"><div id="tabs" role="group" aria-label="Filter by status" style="display:flex;gap:.5rem;flex-wrap:wrap"></div>
+      <div class="field search"><label class="sr" for="q">Search</label><input id="q" type="search" placeholder="Search title"></div></div>
+    <div class="table-wrap"><table class="tbl"><thead><tr>
+      <th style="width:44px"><input type="checkbox" class="cb" id="all" aria-label="Select all"></th><th>TITLE</th><th>IMAGE</th><th>STATUS</th><th>DATE ADDED</th><th>LAST UPDATE</th><th><span class="sr">Actions</span></th>
+    </tr></thead><tbody id="rows"></tbody></table></div>
+    <p class="empty" id="empty" hidden>No announcements found.</p>
+  </section>
+</main>
+<dialog class="dlg" id="dlg" aria-labelledby="dt"><form id="f" novalidate>
+  <div class="dlg-head"><h2 id="dt">Add announcement</h2><button type="button" class="iconbtn" id="x" aria-label="Close">&#10005;</button></div>
+  <div class="dlg-body">
+    <div class="field wide"><label for="ti">Title <i>*</i></label><input id="ti" name="title" maxlength="100"><p class="err" hidden></p></div>
+    <div class="field wide"><label for="co">Content <i>*</i></label><textarea id="co" name="content" rows="4"></textarea><p class="err" hidden></p></div>
+    <div class="field"><label for="st">Status <i>*</i></label><select id="st" name="status"><option>Active</option><option>Draft</option><option>Disabled</option></select><p class="err" hidden></p></div>
+    <div class="field wide"><label for="im">Image (optional, JPG, PNG or WEBP, up to 3 MB)</label>
+      <div class="dropimg"><img class="thumb" id="pv" src="../assets/images/announcement-placeholder.svg" alt="Image preview"><div><input id="im" name="image" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"><p class="hint" id="imn"></p><button type="button" class="btn btn-line" id="rmimg" hidden>Remove image</button></div></div><p class="err" hidden></p></div>
+  </div>
+  <div class="dlg-actions"><button type="button" class="btn btn-line" id="cancel">Cancel</button><button type="submit" class="btn btn-primary">Save</button></div>
+</form></dialog>
+<script src="../js/sample-data.js"></script><script src="../js/validation.js"></script><script src="../js/auth.js"></script><script src="../js/navigation.js"></script><script src="../js/announcements.js"></script>
+</body></html>

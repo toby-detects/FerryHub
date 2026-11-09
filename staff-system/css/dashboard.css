@@ -1,0 +1,41 @@
+.app{display:grid;grid-template-columns:clamp(230px,17vw,290px) 1fr;min-height:100vh}
+.side{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;color:#fff;z-index:30;
+ background:linear-gradient(var(--sky) 0,var(--sky) 52%,rgba(63,134,234,0) 74%),url("../assets/images/sidebar-bg.jpg") bottom/cover,var(--sky)}
+.side-clock{height:72px;display:flex;flex-direction:column;justify-content:center;text-align:center;font-size:.85rem;line-height:1.25}
+.brand{display:block;padding:.6rem 1rem 1rem;border-bottom:1px solid rgba(255,255,255,.35)}
+.brand img{width:100%;max-width:230px;display:block;margin:0 auto}
+.nav{display:flex;flex-direction:column;overflow:auto}
+.nav a,.nav button{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem;color:#fff;text-decoration:none;font:700 .95rem/1.2 Manrope,sans-serif;background:none;border:0;border-bottom:1px solid rgba(255,255,255,.3);text-align:left;cursor:pointer;margin:0}
+.nav img{width:28px;height:28px;object-fit:contain;flex:none}
+.nav a:hover,.nav button:hover{background:rgba(255,255,255,.14)}
+.nav a[aria-current=page]{background:var(--navy);border-radius:8px;margin:.35rem .5rem;border:0;box-shadow:inset 4px 0 0 #9cc4ff}
+.nav .chip{display:block;font:500 .7rem "IBM Plex Sans",system-ui,sans-serif;background:rgba(255,255,255,.22);border-radius:99px;padding:0 .5rem;margin-top:.15rem;width:max-content}
+.nav .locked{opacity:.85}
+.logout{margin-top:auto;display:flex;align-items:center;gap:.8rem;padding:1rem;color:#fff;background:none;border:0;font:700 1rem Manrope,sans-serif;cursor:pointer;text-shadow:0 1px 6px rgba(8,30,60,.6)}
+.logout img{height:28px;width:auto}
+.main-col{min-width:0;display:flex;flex-direction:column}
+.top{height:72px;background:var(--sky);color:#fff;display:flex;align-items:center;gap:1rem;padding:0 1.4rem;position:relative}
+.route{font-size:1rem;display:flex;gap:.7rem;align-items:center}.route i{width:1px;height:20px;background:#fff;opacity:.8}.route b{font-weight:600;letter-spacing:.02em}
+.top .sp{margin-left:auto}
+.bell{position:relative;background:none;border:0;cursor:pointer;width:42px;height:42px;display:grid;place-items:center;color:#fff}
+.bell svg{width:26px;height:26px;fill:#fff}
+.bell .dot{position:absolute;top:7px;right:9px;width:10px;height:10px;border-radius:50%;background:#ff3b30;border:2px solid var(--sky)}
+.acct{position:relative}
+.acct>button{display:flex;align-items:center;gap:.6rem;background:none;border:0;color:#fff;font:500 1rem "IBM Plex Sans",system-ui,sans-serif;cursor:pointer;padding:.2rem .4rem;border-radius:10px}
+.acct>button img{height:38px;width:38px;border-radius:50%;background:#7fb0f5}
+.menu{position:absolute;right:0;top:calc(100% + 8px);background:#fff;color:var(--text);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px rgba(8,24,48,.25);width:230px;padding:.6rem;z-index:40}
+.menu p{margin:.2rem .5rem .5rem;font-size:.85rem;color:var(--muted)}
+.menu .btn{width:100%;justify-content:center}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+.content{padding:clamp(1rem,2.4vw,2rem);flex:1}
+.page-head{margin-bottom:1.2rem}.page-head h1{font-size:1.7rem}.page-head p{margin:.2rem 0 0;color:var(--muted)}
+.validate{position:fixed;right:1.2rem;bottom:1rem;display:flex;align-items:center;gap:.7rem;background:none;border:0;font:700 1rem Manrope,sans-serif;color:var(--text);cursor:pointer;z-index:20}
+.validate img{height:52px;width:52px}
+.scrim{display:none}
+@media(max-width:900px){
+ .app{grid-template-columns:1fr}
+ .side{position:fixed;left:0;top:0;width:280px;transform:translateX(-100%);transition:transform .2s}
+ body.nav-open .side{transform:none}
+ body.nav-open .scrim{display:block;position:fixed;inset:0;background:rgba(8,24,48,.5);z-index:25}
+ .burger{display:block}.route i,.route span{display:none}.top{padding:0 .8rem}.validate span{display:none}
+}

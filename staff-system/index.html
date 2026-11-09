@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Staff Login | FerryHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/global.css"><link rel="stylesheet" href="css/login.css"></head>
+<body>
+<main class="login">
+  <section class="brand-side"><img src="assets/images/login-logo.png" alt="FerryHub, Montenegro Shipping Lines, Mabini-Tingloy Batangas"></section>
+  <section class="lcard" aria-labelledby="lt">
+    <img class="grp" src="assets/icons/login-group.png" alt="">
+    <h1 id="lt">Staff Login</h1><p class="sub">Sign in to manage passengers, announcements and schedules.</p>
+    <div class="seg" role="group" aria-label="Account type"><button type="button" id="segAdmin" class="locked">Admin</button><button type="button" id="segStaff" class="on" aria-pressed="true">Staff</button></div>
+    <p class="notice" id="lnote" role="alert" hidden></p>
+    <form id="loginForm" novalidate>
+      <div class="field ifield"><label class="sr" for="u">Username</label><div class="wrap"><img class="lead" src="assets/icons/user.png" alt="">
+        <input id="u" name="username" type="text" placeholder="Username" autocomplete="username"></div><p class="err" hidden></p></div>
+      <div class="field ifield"><label class="sr" for="p">Password</label>
+        <div class="wrap"><img class="lead" src="assets/icons/lock.png" alt=""><input id="p" name="password" type="password" placeholder="Password" autocomplete="current-password">
+        <button type="button" class="eye" id="eye" aria-label="Show password" aria-pressed="false"><img id="eyeOff" src="assets/icons/eye-off.png" alt="">
+          <svg id="eyeOn" viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 12S5.5 5 12 5s10.5 7 10.5 7-4 7-10.5 7S1.5 12 1.5 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div>
+        <p class="err" hidden></p></div>
+      <button class="btn btn-primary" type="submit">Login</button>
+    </form>
+    <p class="demo">Prototype only. Test login: admin / 12345678</p>
+  </section>
+</main>
+<script src="js/sample-data.js"></script><script src="js/validation.js"></script><script src="js/auth.js"></script>
+</body></html>

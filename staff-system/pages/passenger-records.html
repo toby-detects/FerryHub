@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Passenger Records | FerryHub Staff</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/global.css"><link rel="stylesheet" href="../css/dashboard.css"><link rel="stylesheet" href="../css/passenger-records.css"></head>
+<body data-page="passengers" data-root="../">
+<main id="page">
+  <div class="page-head"><h1>Passenger Records</h1><p>Search, filter and update registered passengers.</p></div>
+  <section class="card">
+    <div class="toolbar">
+      <div class="field grow"><label for="q">Search</label><input id="q" type="search" placeholder="Name, registration no., address or email"></div>
+      <div class="field"><label for="fc">Category</label><select id="fc"><option value="">All</option></select></div>
+      <div class="field"><label for="fk">Local or Tourist</label><select id="fk"><option value="">All</option></select></div>
+      <button class="btn btn-line" id="reset" type="button">Reset</button>
+      <span class="count" id="count" aria-live="polite"></span>
+    </div>
+    <div class="table-wrap"><table class="tbl"><thead><tr id="thead"></tr></thead><tbody id="rows"></tbody></table></div>
+    <p class="empty" id="empty" hidden>No passengers match your search or filters.</p>
+  </section>
+</main>
+<dialog class="dlg" id="dlg" aria-labelledby="dt"><form id="f" novalidate>
+  <div class="dlg-head"><h2 id="dt">Edit passenger</h2><button type="button" class="iconbtn" id="x" aria-label="Close">&#10005;</button></div>
+  <div class="dlg-body">
+    <div class="field"><label for="rn">Registration No.</label><input id="rn" name="regNo" readonly></div>
+    <div class="field"><label for="nm">Full name <i>*</i></label><input id="nm" name="name"><p class="err" hidden></p></div>
+    <div class="field"><label for="ag">Age <i>*</i></label><input id="ag" name="age" inputmode="numeric"><p class="err" hidden></p></div>
+    <div class="field"><label for="ct">Category <i>*</i></label><select id="ct" name="category"></select><p class="err" hidden></p></div>
+    <div class="field"><label for="cl">Local or Tourist <i>*</i></label><select id="cl" name="cls"></select><p class="err" hidden></p></div>
+    <div class="field"><label for="em">Email <i>*</i></label><input id="em" name="email" type="email"><p class="err" hidden></p></div>
+    <div class="field wide"><label for="ad">Address <i>*</i></label><textarea id="ad" name="address" rows="2"></textarea><p class="err" hidden></p></div>
+    <div class="field"><label for="dd">Departure date <i>*</i></label><input id="dd" name="date" type="date"><p class="err" hidden></p></div>
+    <div class="field"><label for="dtm">Departure time <i>*</i></label><select id="dtm" name="time"></select><p class="err" hidden></p></div>
+  </div>
+  <div class="dlg-actions"><button type="button" class="btn btn-line" id="cancel">Cancel</button><button type="submit" class="btn btn-primary">Save changes</button></div>
+</form></dialog>
+<script src="../js/sample-data.js"></script><script src="../js/validation.js"></script><script src="../js/auth.js"></script><script src="../js/navigation.js"></script><script src="../js/passenger-records.js"></script>
+</body></html>
